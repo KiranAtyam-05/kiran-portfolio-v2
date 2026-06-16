@@ -63,7 +63,7 @@ function parseResume(text) {
 function useResume() {
   const [resume, setResume] = useState(fallbackResume);
   useEffect(() => {
-    fetch('./public/resume/resume.txt', { cache: 'no-store' })
+    fetch('/resume/resume.txt', { cache: 'no-store' })
       .then((res) => res.ok ? res.text() : Promise.reject())
       .then((text) => setResume(parseResume(text)))
       .catch(() => setResume(fallbackResume));
@@ -74,7 +74,7 @@ function useResume() {
 function useGithub() {
   const [github, setGithub] = useState({ user: {}, repos: [] });
   useEffect(() => {
-    const local = () => fetch('./public/data/github.json').then((res) => res.json());
+    const local = () => fetch('/data/github.json').then((res) => res.json());
     Promise.all([
       fetch('https://api.github.com/users/KiranAtyam-05').then((res) => res.json()),
       fetch('https://api.github.com/users/KiranAtyam-05/repos?per_page=100&sort=updated').then((res) => res.json())
@@ -231,7 +231,7 @@ function Hero({ resume, github }) {
       React.createElement('div', { className: 'action-row' },
         React.createElement('a', { className: 'magnetic btn primary', href: resume.github, target: '_blank', rel: 'noreferrer' }, 'Explore GitHub'),
         React.createElement('a', { className: 'magnetic btn ghost', href: resume.linkedin, target: '_blank', rel: 'noreferrer' }, 'LinkedIn'),
-        React.createElement('a', { className: 'magnetic btn ghost', href: './public/resume/Kiran_Atyam_Final_Resume.docx' }, 'Resume')
+        React.createElement('a', { className: 'magnetic btn ghost', href: '/resume/Kiran_Atyam_Final_Resume.docx' }, 'Resume')
       )
     ),
     React.createElement('div', { className: 'hero-right' },
@@ -240,7 +240,7 @@ function Hero({ resume, github }) {
         React.createElement('div', { className: 'avatar-spark spark-a' }),
         React.createElement('div', { className: 'avatar-spark spark-b' }),
         React.createElement('div', { className: 'scan' }),
-        React.createElement('img', { src: './public/assets/kiran-avatar-animated.gif', alt: 'Animated cartoon avatar of Kiran Atyam' }),
+        React.createElement('img', { src: '/assets/kiran-avatar-animated.gif', alt: 'Animated cartoon avatar of Kiran Atyam' }),
         React.createElement('div', { className: 'hud hud-a' }, React.createElement('strong', null, '3.5+'), React.createElement('span', null, 'Years')),
         React.createElement('div', { className: 'hud hud-b' }, React.createElement('strong', null, github.user.public_repos || 6), React.createElement('span', null, 'Repos')),
         React.createElement('div', { className: 'hud hud-c' }, React.createElement('strong', null, 'GCP'), React.createElement('span', null, 'Cloud'))
@@ -312,7 +312,7 @@ function Contact({ resume }) {
           React.createElement('span', { className: 'contact-icon' }, '✉'),
           'Say Hello'
         ),
-        React.createElement('a', { className: 'magnetic contact-btn download', href: './public/resume/Kiran_Atyam_Final_Resume.docx' },
+        React.createElement('a', { className: 'magnetic contact-btn download', href: '/resume/Kiran_Atyam_Final_Resume.docx' },
           React.createElement('span', { className: 'contact-icon' }, '⇩'),
           'Download Resume'
         )

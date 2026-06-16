@@ -13,7 +13,7 @@ TECHNICAL SKILLS
 Frontend: React.js, JavaScript, HTML5, CSS3, Redux Toolkit, Context API
 Backend: Core Java, Spring Boot, REST APIs
 Cloud & DevOps: GCP, Terraform, GitHub, CI/CD Pipelines, Deployment Automation
-Database: Oracle SQL
+Database: Oracle SQL, SQL
 Tools: Git, GitHub, Docker, Kubernetes, VS Code, Eclipse, STS
 Methodologies: Agile, Scrum
 

@@ -350,16 +350,25 @@ function App() {
 }
 
 function useEffects() {
-  useEffect(() => {
+  React.useEffect(() => {
     const reveals = [...document.querySelectorAll('.reveal')];
-    const io = new IntersectionObserver((entries) => entries.forEach((entry) => {
-      if (entry.isIntersecting) entry.target.classList.add('visible');
-    }), { threshold: .16 });
+
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      },
+      { threshold: 0.16 }
+    );
+
     reveals.forEach((item) => io.observe(item));
+
     return () => io.disconnect();
   }, []);
 }
-
 function startMotion() {
   const cursor = document.getElementById('cursor');
   const spot = document.getElementById('spotlight');

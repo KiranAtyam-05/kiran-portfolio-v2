@@ -1,4 +1,4 @@
-﻿const { useEffect, useMemo, useState } = React;
+﻿﻿const { useEffect, useMemo, useState } = React;
 
 const fallbackResume = {
   name: 'KIRAN ATYAM',
@@ -427,4 +427,3 @@ function startCanvas() {
 startCanvas();
 startMotion();
 ReactDOM.createRoot(document.getElementById('root')).render(React.createElement(App));
-

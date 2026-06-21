@@ -74,7 +74,7 @@ function useResume() {
 function useGithub() {
   const [github, setGithub] = useState({ user: {}, repos: [] });
   useEffect(() => {
-    const local = () => fetch('/data/github.json').then((res) => res.json());
+    const local = () => fetch('data/github.json').then((res) => res.json());
     Promise.all([
       fetch('https://api.github.com/users/KiranAtyam-05').then((res) => res.json()),
       fetch('https://api.github.com/users/KiranAtyam-05/repos?per_page=100&sort=updated').then((res) => res.json())
